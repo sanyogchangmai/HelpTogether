@@ -1,0 +1,36 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+/* ! Intro */
+.logo-pic{
+    height: 80px;
+}
+.intro h1{
+    margin: 50px auto;
+    font-weight: 700;
+}
+.intro-desc{
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80%;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.about-pic{
+    width: 500px;
+    border-radius: 50%;
+}
+
+@media (max-width: 600px){
+
+    /* ! Intro */
+    .about-pic{
+        width: 300px;
+    }
+    .logo-pic{
+        height: 50px;
+    }
+}

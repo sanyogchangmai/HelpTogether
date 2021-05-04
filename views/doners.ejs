@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Doners</title>
+
+    <%- include("./partials/imports.ejs") %>
+
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/doners.css">
+
+</head>
+<body>
+
+    <!-- !Navbar -->
+
+    <%- include("./partials/navbar.ejs") %>
+
+    <!-- ! Navbar end -->
+
+    <section class="form">
+        <center><h1>Registered Doners</h1></center>  
+
+        <form action="/" method="post" class="register-form">
+            <div class="row filter">
+                <div class="col">
+                    <label for="district">District</label>
+                    <select id="inputState" class="form-control">
+                      <option selected>All</option>
+                  <option>Baksa</option>
+                  <option>Barpeta</option>
+                  <option>Biswanath</option>
+                  <option>Bongaigaon</option>
+                  <option>Cachar</option>
+                  <option>Charaideo</option>
+                  <option>Chirang</option>
+                  <option>Darrang</option>
+                  <option>Dhemaji</option>
+                  <option>Dhubri</option>
+                  <option>Dibrugarh</option>
+                  <option>Dima Hasao</option>
+                  <option>Goalpara</option>
+                  <option>Hailakandi</option>
+                  <option>Hojai</option>
+                  <option>Jorhat</option>
+                  <option>Kamrup</option>
+                  <option>Kamrup Metropolitian</option>
+                  <option>Karbi Anglong</option>
+                  <option>Karimganj</option>
+                  <option>Kokrajhar</option>
+                  <option>Lakhimpur</option>
+                  <option>Majuli</option>
+                  <option>Morigaon</option>
+                  <option>Nagaon</option>
+                  <option>Sivasagar</option>
+                  <option>Sonitpur</option>
+                  <option>South Salamara-Mankachar</option>
+                  <option>Tinsukia</option>
+                  <option>Udalguri</option>
+                  <option>West Karbi Anglong</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="bloodgroup">Blood Group</label>
+                    <select id="blood" class="form-control">
+                      <option>All</option>
+                      <option>A+</option>
+                      <option>B+</option>
+                      <option>AB+</option>
+                      <option>A-</option>
+                      <option>B-</option>
+                      <option>AB-</option>
+                      <option>O+</option>
+                      <option>O-</option>
+                    </select>
+                </div>
+            </div>
+
+            <br>
+
+            <center><button class="action">Find</button></center>
+            
+
+        </form>
+    </section>
+
+    <section class="all-result"> 
+        
+        <% if(Donerdata.length>0){ %>
+            <% Donerdata.forEach(result => { %>
+    
+                <div class="col">
+                    <div class="row">
+                      <div class="doner-data"><%= result.name %></div>
+                      <div class="doner-data"><%= result.sirname %></div>
+                      <div class="doner-data"><%= result.blood %></div>
+                    </div>
+                    <div class="row">
+                        <div class="doner-data"><%= result.mobile %></div>
+                        <div class="doner-data"><%= result.sex %></div>
+                        <div class="doner-data"><%= result.negative %></div>
+                    </div>
+                </div>
+
+            <%})%>
+          <%}else{%>
+            <center>
+              <img src="assets/nodata.png" alt="" class="nodata-pic">
+              <h1 class="empty-warning">No requests to view.</h1>
+              <a href="/request">
+                <button class="action-nodata">
+                  <i class="fas fa-user-plus"></i>
+                  Post a request
+                </button>
+              </a>  
+            </center>   
+          <%}%>
+
+
+    </section>
+
+
+    <center>
+        <br>
+        <h5 class="foot-caption">With <i class="fas fa-heart"></i> citizens.</h5>
+        <br>
+      </center>
+  
+      <!-- ! Footer -->
+      <%- include("./partials/footer.ejs") %>
+    
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+
+    <%- include("./partials/imports.ejs") %>
+
+    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="css/basic.css">
+    <!-- ! menifest json -->
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+    <!-- !Navbar -->
+
+    <%- include("./partials/navbar.ejs") %>
+
+    <!-- ! Navbar end -->
+    
+    <!-- ! Intro -->
+
+    <section class="intro">
+        <center>
+            <h1>Donate and save life</h1>
+        </center>
+        
+        <p class="intro-desc">
+            Our country is going through a tough time. A large number of people are getting
+            infected everyday. Many people are suffereing due to lack of medical aid. If you have recently
+            recovered from COVID 19 we urge you to register as a plasma doner in our portal and help people
+            who are in need of plasma. Your donation can make a huge difference and save many lifes.       
+        </p>
+        
+        <!-- <div class="eligibility"> -->
+            <div class="card-header">
+                <center>
+                    <h4>ELIGIBILITY FOR PLASMA DONATION</h4>
+                </center>
+              </div>
+
+              <br><br>
+
+            <div class="container">
+                <div class="row criteria">
+                  <div class="col-sm">
+                      <center>
+                          <ul>
+                            <li><i class="fas fa-hand-point-right"></i></li>
+                            <li>Tested COVID +ve in last 120 days</li>
+                          </ul>
+                          <!-- 1. Tested COVID +ve in last 120 days -->                  
+                      </center>      
+                  </div>
+                  <div class="col-sm">
+                    <center>
+                          <ul>
+                            <li><i class="fas fa-hand-point-right"></i></li>
+                            <li>Women must not have conceived a child</li>
+                          </ul>                    
+                      </center>
+                  </div>
+                  <div class="col-sm">
+                    <center>
+                      <ul>
+                        <li><i class="fas fa-hand-point-right"></i></li>
+                        <li>Should not have received plasma themselves</li>
+                      </ul>                                          
+                      </center>
+                  </div>
+                </div>
+              </div>
+
+              <div class="container">
+                <div class="row criteria">
+                  <div class="col-sm">
+                    <center>
+                      <ul>
+                        <li><i class="fas fa-hand-point-right"></i></li>
+                        <li>Should be between 18-65 years</li>  
+                      </ul>                                        
+                      </center>
+                  </div>
+                  <div class="col-sm">
+                    <center>
+                      <ul>
+                        <li><i class="fas fa-hand-point-right"></i></li>
+                        <li>Should have recovered from multiple symptoms</li>
+                      </ul>                                             
+                      </center>
+                  </div>
+                  <div class="col-sm">
+                    <center>
+                      <ul>
+                        <li><i class="fas fa-hand-point-right"></i></li>
+                        <li>Should not have Diabetes or High BP</li>
+                      </ul>                                           
+                      </center>
+                  </div>
+                </div>
+              </div>
+
+              <div class="container">
+                <div class="row criteria">
+                  <div class="col-sm">
+                    <center>
+                      <ul>
+                        <li><i class="fas fa-hand-point-right"></i></li>
+                        <li>Should weight atleast 55 kgs</li> 
+                      </ul>                                          
+                      </center>
+                  </div>
+                  <div class="col-sm">
+                    <center>
+                      <ul>
+                        <li><i class="fas fa-hand-point-right"></i></li>
+                        <li>Should not have had the COVID vaccine</li> 
+                      </ul>                                              
+                      </center>
+                  </div>
+                  <div class="col-sm">
+                    <center>
+                      <ul>
+                        <li><i class="fas fa-hand-point-right"></i></li>
+                        <li>Should not have Thyroid</li>   
+                      </ul>                                         
+                      </center>
+                  </div>
+                </div>
+              </div>
+
+        <!-- </div> -->
+    </section>
+
+    <!-- ! Intro end -->
+
+    <!-- ! Form -->
+
+    <section class="form">
+
+        <form class="register-form" action="/find" method="POST">
+
+            <div class="row">
+              <div class="col">
+                <label for="firstName">First Name</label>
+                <input type="text" name="firstName" class="form-control" placeholder="First name" required>
+              </div>
+              <div class="col">
+                <label for="lastName">Last Name</label>
+                <input type="text" name="lastName" class="form-control" placeholder="Last name" required>
+              </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col">
+                    <label for="district">District</label>
+                    <select id="inputState" name="district" class="form-control" required>
+                      <option selected>All</option>
+                  <option>Baksa</option>
+                  <option>Barpeta</option>
+                  <option>Biswanath</option>
+                  <option>Bongaigaon</option>
+                  <option>Cachar</option>
+                  <option>Charaideo</option>
+                  <option>Chirang</option>
+                  <option>Darrang</option>
+                  <option>Dhemaji</option>
+                  <option>Dhubri</option>
+                  <option>Dibrugarh</option>
+                  <option>Dima Hasao</option>
+                  <option>Goalpara</option>
+                  <option>Hailakandi</option>
+                  <option>Hojai</option>
+                  <option>Jorhat</option>
+                  <option>Kamrup</option>
+                  <option>Kamrup Metro.</option>
+                  <option>Karbi Anglong</option>
+                  <option>Karimganj</option>
+                  <option>Kokrajhar</option>
+                  <option>Lakhimpur</option>
+                  <option>Majuli</option>
+                  <option>Morigaon</option>
+                  <option>Nagaon</option>
+                  <option>Sivasagar</option>
+                  <option>Sonitpur</option>
+                  <option>South Salamara-Mankachar</option>
+                  <option>Tinsukia</option>
+                  <option>Udalguri</option>
+                  <option>West Karbi Anglong</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="bloodgroup">Blood Group</label>
+                    <select id="blood" name="blood" class="form-control" reqired>
+                      <option>All</option>
+                      <option>A+</option>
+                      <option>B+</option>
+                      <option>AB+</option>
+                      <option>A-</option>
+                      <option>B-</option>
+                      <option>AB-</option>
+                      <option>O+</option>
+                      <option>O-</option>
+                    </select>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col">
+                    <label for="contact">Contact Number</label>
+                    <input type="number" name="number" class="form-control" placeholder="Contact Number" required>
+                </div>
+                <div class="col">
+                    <label for="gender" class="gender-label gender-label">Gender</label>
+                    <div class="form-check">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" value="Male" id="customRadio1" name="gender" class="custom-control-input" required>
+                            <label class="custom-control-label" for="customRadio1">Male</label>
+                          </div>
+                          <div class="custom-control custom-radio">
+                            <input type="radio" value="Female" id="customRadio2" name="gender" class="custom-control-input" required>
+                            <label class="custom-control-label" for="customRadio2">Female</label>
+                          </div>
+                          <div class="custom-control custom-radio">
+                            <input type="radio" value="Others" id="customRadio3" name="gender" class="custom-control-input" required>
+                            <label class="custom-control-label" for="customRadio3">Others</label>
+                          </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col">
+                    <label for="positiveDate">You tested positive on</label>
+                  <input type="date" name="positiveDate" class="form-control" placeholder="You tested positive on">
+                </div>
+                <div class="col">
+                    <label for="negativeDate">You tested negative on</label>
+                  <input type="date" name="negativeDate" class="form-control" placeholder="dd/mm/yyyy">
+                </div>
+              </div>
+
+              <br><br>
+
+              <center>
+                <div class="alert alert-danger" role="alert">
+                  <p>
+                    <b>Terms & conditions : </b>
+                    By submitting the form you accept that you are voluntarily registering as a plasma donor. 
+                   You have read the eligibility criteria and confirm 
+                   that you are eligible to donate plasma. You authorize to display 
+                   your Name, Mobile/telephone number to the person who is in need 
+                   of plasma and to all the users of this web-app.You release all 
+                   organizers, trustees, volunteers and assistants in this 
+                   project from all damages whatsoever and waive all rights 
+                   to compensation in case of injury or loss.You agree to hold harmless 
+                   for its use of the information for the exclusive purpose(s) 
+                   set out above.
+               </p>
+                </div>
+                  <input type="checkbox" value="true" name="agreement" id="terms">
+                  <label for="agreement">I agree.</label>
+                  <br>
+                  <button class="action">Submit</button>
+              </center>    
+
+          </form>
+
+    </section>
+
+    <!-- ! Form end -->
+
+
+
+    <center>
+        <br>
+        <h5 class="foot-caption">With <i class="fas fa-heart"></i> citizens.</h5>
+        <br>
+      </center>
+  
+      <!-- ! Footer -->
+      <%- include("./partials/footer.ejs") %>
+    
+</body>
+</html>

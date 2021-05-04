@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpTogethert</title>
+
+    <%- include("./partials/imports.ejs") %>
+
+    <!-- ! CSS -->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/basic.css">
+    <!-- ! menifest json -->
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+    <!-- !Navbar -->
+
+    <%- include("./partials/navbar.ejs") %>
+
+    <!-- ! Navbar end -->
+
+    <br>
+
+    <!-- ! Intro section -->
+
+    <section class="intro">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <center>
+              <a href="/request">
+                <button class="action">
+                  <i class="fas fa-user-plus"></i>
+                  Post a request
+                </button>
+              </a>              
+            </center>  
+          </div>
+          <div class="col-sm">
+            <center>
+              <a href="/register">
+                <button class="action">
+                  <i class="fas fa-tint"></i>
+                  Register as doner
+                </button>
+              </a>             
+            </center>
+          </div>
+          <div class="col-sm">
+            <center>
+              <a href="/find">
+                <button class="action">
+                  <i class="fas fa-user"></i>
+                  Find a doner
+                </button>
+              </a>            
+            </center>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ! Intro section end -->
+
+    <hr>
+
+    <!-- ! Posts -->
+
+    <section class="posts">
+
+      
+      <center><h1 class="title-post">Recent Requests</h1></center>
+      <hr>
+      <br>
+
+      <% if(Requestdata.length>0){ %>
+        <% Requestdata.forEach(result => { %>
+
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <!-- <center> -->
+                  <div class="post-body">
+                    <div class="card-header card-top">
+                      Posted on :
+                      <span class="badge badge-success">
+                        <%= result.createdAt.toDateString() %>
+                      </span>                      
+                    </div>
+                    <br>
+                    <div class="row-info">
+                      <div class="info">
+                        <h5><i class="fas fa-user"></i> <%= result.name + " " + result.sirname%></h5>
+                      </div>
+                      <div class="info">
+                        <h5><i class="fas fa-map-marker-alt"></i> <%= result.district %></h5>
+                      </div>
+                      <div class="info">
+                        <a href="tel:<%= result.mobile %>">
+                          <h5><i class="fas fa-phone-alt"></i> <%= result.mobile %></h5></a>     
+                      </div>
+                    </div>
+                    <hr>
+                    <p>
+                      <%- result.messege %>
+                    </p>
+                    <hr>
+                    <div class="msg-btn">
+                        <h5>Share <i class="fas fa-share-alt"></i></h5>
+                        <h5>Call <a href="tel:<%= result.mobile %>"><i class="fas fa-phone-alt"></i></a></h5>
+
+                    </div>
+                  </div>
+                <!-- </center> -->
+              </div>
+            </div>
+          </div>
+        <%})%>
+      <%}else{%>
+        <center>
+          <img src="assets/nodata.png" alt="" class="nodata-pic">
+          <h1 class="empty-warning">No requests to view.</h1>
+          <a href="/request">
+            <button class="action-nodata">
+              <i class="fas fa-user-plus"></i>
+              Post a request
+            </button>
+          </a>  
+        </center>   
+      <%}%>
+
+      
+    </section>
+
+    <!-- ! Posts end -->
+   
+    <center>
+      <br>
+      <h5 class="foot-caption">With <i class="fas fa-heart"></i> citizens.</h5>
+      <br>
+    </center>
+
+    <!-- ! Footer -->
+    <%- include("./partials/footer.ejs") %>
+
+
+    
+  
+
+</body>
+</html>

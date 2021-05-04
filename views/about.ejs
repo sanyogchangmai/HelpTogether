@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpTogethert</title>
+
+    <%- include("./partials/imports.ejs") %>
+
+    <!-- ! CSS -->
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/basic.css">
+    <!-- ! menifest json -->
+    <link rel="manifest" href="manifest.json">
+    
+
+</head>
+<body>
+
+    <!-- !Navbar -->
+
+    <%- include("./partials/navbar.ejs") %>
+
+    <!-- ! Navbar end -->
+
+    <section class="intro">
+        <center>
+            <h1>About Us</h1>
+            <p class="intro-desc">
+                HelpTogether is a web app with an aim of helping people during the coid 19
+                pendemic. We try to connect people who are in need of medical aid with the
+                suppliers.People can post their request of medicine, plasma or any
+                other essential medical aid requirement which has less supply at the time.
+                We try to share your request with as many people as possible. Also plasma doners
+                can register themselves as doners so that people who are in need of plasma can 
+                find them and contact them directly.Through this app we aim to provide one stop
+                destination for people to find and help people who are in need.
+            </p>
+            <img src="assets/volunteers.png" alt="" class="about-pic">
+        </center>
+    </section>
+
+    <br>
+    
+    <center>
+        <br>
+        <h5 class="foot-caption">With <i class="fas fa-heart"></i> citizens.</h5>
+        <br>
+      </center>
+  
+      <!-- ! Footer -->
+      <%- include("./partials/footer.ejs") %>
+    
+</body>
+</html>

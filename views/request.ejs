@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request requirements</title>
+
+    <%- include("./partials/imports.ejs") %>
+
+    <!-- ! CSS -->
+    <link rel="stylesheet" href="css/request.css">
+    <link rel="stylesheet" href="css/basic.css">
+    <!-- ! menifest json -->
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+    <!-- !Navbar -->
+
+    <%- include("./partials/navbar.ejs") %>
+
+    <!-- ! Navbar end -->
+    
+    <!-- ! intro -->
+    <section class="intro">
+        <center>
+            <h1>Request your requirement</h1>
+        </center>
+        <center>
+            <p class="intro-desc">
+                In the tough times when the country is fighting with
+                the second wave of COVID 19 essential medical requirements
+                are. We urge you to post your requirement and we will try our best
+                to convey your request to world helping you find what you are looking for.
+                Even though we dont promise that we would find you what you are looking for 
+                but we will try our best to help you out.
+            </p>
+        </center>
+    </section>
+    <!-- ! intro end -->
+
+
+    <!-- ! Form -->
+    <form class="register-form" action="/" method="post">
+
+        <div class="row">
+            <div class="col">
+              <label for="firstName">First Name</label>
+              <input type="text" name="firstName" class="form-control" placeholder="First name" required>
+            </div>
+            <div class="col">
+              <label for="lastName">Last Name</label>
+              <input type="text" name="lastName" class="form-control" placeholder="Last name" required>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="row">
+            <div class="col">
+                <label for="district">District</label>
+                <select name="district" id="inputState" class="form-control" required>
+                  <option selected>All</option>
+                  <option>Baksa</option>
+                  <option>Barpeta</option>
+                  <option>Biswanath</option>
+                  <option>Bongaigaon</option>
+                  <option>Cachar</option>
+                  <option>Charaideo</option>
+                  <option>Chirang</option>
+                  <option>Darrang</option>
+                  <option>Dhemaji</option>
+                  <option>Dhubri</option>
+                  <option>Dibrugarh</option>
+                  <option>Dima Hasao</option>
+                  <option>Goalpara</option>
+                  <option>Hailakandi</option>
+                  <option>Hojai</option>
+                  <option>Jorhat</option>
+                  <option>Kamrup</option>
+                  <option>Kamrup Metropolitian</option>
+                  <option>Karbi Anglong</option>
+                  <option>Karimganj</option>
+                  <option>Kokrajhar</option>
+                  <option>Lakhimpur</option>
+                  <option>Majuli</option>
+                  <option>Morigaon</option>
+                  <option>Nagaon</option>
+                  <option>Sivasagar</option>
+                  <option>Sonitpur</option>
+                  <option>South Salamara-Mankachar</option>
+                  <option>Tinsukia</option>
+                  <option>Udalguri</option>
+                  <option>West Karbi Anglong</option>
+                </select>
+            </div>
+            <div class="col">
+                <label for="contact">Contact No.</label>
+                <input name="number" type="number" class="form-control" placeholder="Contact number" required>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div class="row">
+            <textarea type="text" name="messege" class="form-control text-request" id="textarea" 
+            rows="20" placeholder="Describe your request in brief...." required></textarea>
+        </div>
+
+        <br>
+
+        <center>
+            <div class="alert alert-danger" role="alert">
+              <p>
+                <b>Terms & conditions : </b>
+                By submitting the form you accept that you are voluntarily registering as a plasma donor. 
+                You have read the eligibility criteria and confirm 
+                that you are eligible to donate plasma. You authorize to display 
+                your Name, Mobile/telephone number to the person who is in need 
+                of plasma and to all the users of this web-app.You release all 
+                organizers, trustees, volunteers and assistants in this 
+                project from all damages whatsoever and waive all rights 
+                to compensation in case of injury or loss.You agree to hold harmless 
+                for its use of the information for the exclusive purpose(s) 
+                set out above.
+              </p>
+            </div>
+              <input type="checkbox" value="true" name="agreement" id="terms" required>
+              <label for="agreement">I agree.</label>
+              <br>
+              <button class="action">Submit</button>
+          </center>    
+
+    </form>
+    <!-- ! Form end -->
+
+    <center>
+        <br>
+        <h5 class="foot-caption">With <i class="fas fa-heart"></i> citizens.</h5>
+        <br>
+    </center>
+  
+      <!-- ! Footer -->
+      <%- include("./partials/footer.ejs") %>
+    
+</body>
+</html>
