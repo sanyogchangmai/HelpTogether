@@ -119,6 +119,6 @@ app.get("/fallback",function(req,res){
     res.render("fallback");
 })
 
-app.listen(5000,function(){
+app.listen(process.env.PORT || 5000,function(){
     console.log("Server is running at port 5000");
 })
