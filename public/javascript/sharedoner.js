@@ -1,12 +1,10 @@
- 
-    document.querySelector('.share-button').addEventListener("click",handleShare);
-    document.querySelector('.share-sm-btn').addEventListener("click",handleShare);
+document.querySelector('.doner-share-btn').addEventListener("click",handleShare);
     
     function handleShare(){
       if(navigator.share){
         navigator.share({
-          title: 'Request from HelpTogether',
-          text: 'Have a look and see if you can help',
+          title: 'Check for doners on HelpTogether',
+          text: 'HelpTogether might have a doner you are looking for',
           url: window.location.href,
         }).then(() => {
           alert("Thanks for sharing");

@@ -157,7 +157,7 @@
               </div>
               <div class="user-action">
                 <div class="call-btn">
-                  <a href="tel:<% result.mobile %>">
+                  <a href="tel:<%= result.mobile %>">
                     <button class="action-doner">
                       <h3><i class="fas fa-phone-alt"></i> <%= result.mobile %></h3>
                     </button>
@@ -165,7 +165,7 @@
                 </div>
                 <div class="share-btn">
                   <a href="">
-                    <button class="action-doner">
+                    <button class="action-doner doner-share-btn">
                       <h3>Share <i class="fas fa-share-alt"></i></h3>
                     </button>
                   </a>
@@ -213,6 +213,7 @@
   
       <!-- ! Footer -->
       <%- include("./partials/footer.ejs") %>
+      <script src="/javascript/sharedoner.js"></script>
     
 </body>
 </html>
