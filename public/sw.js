@@ -5,7 +5,7 @@ const offlineAssets = [
     // '/register',
     // '/find',
     // '/about',
-    '/fallback'
+    '/fallback.html'
     // '/css/basic.css',
     // '/css/index.css',
     // '/css/request.css',
@@ -58,6 +58,6 @@ self.addEventListener('fetch', evt => {
     evt.respondWith(
       caches.match(evt.request).then(cacheRes => {
         return cacheRes || fetch(evt.request);
-      }).catch(() => caches.match('/fallback'))
+      }).catch(() => caches.match('/fallback.html'))
     );
   });
