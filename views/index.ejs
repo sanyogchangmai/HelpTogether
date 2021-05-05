@@ -147,14 +147,13 @@
     <script>
 
       const shareButton = document.querySelector('.fa-share-alt');
-      const title =  window.document.title;
-      const url =  window.document.href;
 
       shareButton.addEventListener("click", () => {
         if(navigator.share){
           navigator.share({
-            title: 'title',
-            url: 'url',
+            title: 'Request from HelpTogether',
+            text: result.messege,
+            url: window.location.href,
           }).then(() => {
             alert("Thanks for sharing");
           })
