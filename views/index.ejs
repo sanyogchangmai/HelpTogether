@@ -103,15 +103,17 @@
                     </div>
                     <hr>
                     <p>
-                      <%- result.messege %>
+                      <%- result.messege.substring(0,200) + "...." %>
                     </p>
-                    <a href="/post/<%= result._id %>"><h5>See more</h5></a>
+                    <a href="/post/<%= result._id %>"><button class="view-btn">
+                      View
+                    </button></a>
                     <hr>
-                    <div class="msg-btn">
+                    <!-- <div class="msg-btn">
                         <h5>Share <i class="fas fa-share-alt"></i></h5>
                         <h5>Call <a href="tel:<%= result.mobile %>"><i class="fas fa-phone-alt"></i></a></h5>
 
-                    </div>
+                    </div> -->
                   </div>
                 <!-- </center> -->
               </div>
@@ -145,29 +147,7 @@
     <!-- ! Footer -->
     <%- include("./partials/footer.ejs") %>
 
-
-    <script>
-
-      const shareButton = document.querySelector('.fa-share-alt');
-
-      shareButton.addEventListener("click", () => {
-        if(navigator.share){
-          navigator.share({
-            title: 'Request from HelpTogether',
-            text: 'This is messege',
-            url: window.location.href + '/post/result:id',
-          }).then(() => {
-            alert("Thanks for sharing");
-          })
-          .catch(console.error);
-        }
-        else{
-          console.log("Could Not Share");
-        }
-      })
-
-
-    </script>
+    <script src="/javascript/share.js"></script>
 
 
     

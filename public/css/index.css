@@ -29,7 +29,7 @@
     background-color: #29bb89;
 }
 .row-info{
-    background-color: #29bb89;
+    /* background-color: #29bb89; */
     border-radius: 5px;
     padding: 10px;
     left: 0;
@@ -42,6 +42,18 @@
     margin-right: 8px;
     border-radius: 50%;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 6px 0px, rgb(218,220,224) 0px -1px 0px 0px inset;
+}
+.view-btn{
+    font-family: 'Roboto', sans-serif;
+    margin: 5px auto 10px;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 5px 20px;
+    /* width: 300px; */
+    border-radius: 5px;
+    background-color: #29bb89;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 6px 0px, rgb(218,220,224) 0px -1px 0px 0px inset; 
 }
 .info h5{
     color: #000000;
