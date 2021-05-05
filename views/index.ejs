@@ -145,6 +145,7 @@
     <!-- ! Footer -->
     <%- include("./partials/footer.ejs") %>
 
+
     <script>
 
       const shareButton = document.querySelector('.fa-share-alt');
@@ -154,7 +155,7 @@
           navigator.share({
             title: 'Request from HelpTogether',
             text: 'This is messege',
-            url: window.location.href,
+            url: window.location.href + /post/result._id,
           }).then(() => {
             alert("Thanks for sharing");
           })

@@ -58,7 +58,7 @@ app.post("/",function(req,res){
      });
 })
 
-// ! To view particular blog !
+// ! To view particular request !
 app.get("/post/:id",function(req,res){
     const id = req.params.id;
     Request.findById(id)
