@@ -44,6 +44,12 @@
           "sizes": "192x192"
         },
         {
+          "src": "/assets/icons_app/maskable_icon_x48.png",
+          "type": "image/png",
+          "sizes": "512x512"
+          
+        },
+        {
             "src": "/assets/icons_app/maskable_icon.png",
             "type": "image/png",
             "sizes": "930x930",
