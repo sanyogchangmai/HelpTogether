@@ -58,6 +58,18 @@ app.post("/",function(req,res){
      });
 })
 
+// ! To view particular blog !
+app.get("/post/:id",function(req,res){
+    const id = req.params.id;
+    Request.findById(id)
+     .then((result) => {
+         res.render("details",{postdata: result});
+     })
+     .catch((err) => {
+         console.log(err);
+     }); 
+})
+
 
 // ! Route to go to register page
 app.get("/register",function(req,res){

@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HelpTogethert</title>
+    <title>Request details</title>
 
     <%- include("./partials/imports.ejs") %>
 
     <!-- ! CSS -->
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/basic.css">
 </head>
 <body>
 
@@ -23,7 +23,7 @@
     <br>
 
     <!-- ! Intro section -->
-
+<!-- 
     <section class="intro">
       <div class="container">
         <div class="row">
@@ -59,7 +59,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- ! Intro section end -->
 
@@ -70,12 +70,12 @@
     <section class="posts">
 
       
-      <center><h1 class="title-post">Recent Requests</h1></center>
+      <center><button class="action">
+        <i class="fas fa-share-alt"></i>
+        Share
+      </button></center>
       <hr>
       <br>
-
-      <% if(Requestdata.length>0){ %>
-        <% Requestdata.forEach(result => { %>
 
           <div class="container">
             <div class="row">
@@ -85,31 +85,30 @@
                     <div class="card-header card-top">
                       Posted on :
                       <span class="badge badge-success">
-                        <%= result.createdAt.toDateString() %>
+                        <%= postdata.createdAt.toDateString() %>
                       </span>                      
                     </div>
                     <br>
                     <div class="row-info">
                       <div class="info">
-                        <h5><i class="fas fa-user"></i> <%= result.name + " " + result.sirname%></h5>
+                        <h5><i class="fas fa-user"></i> <%= postdata.name + " " + postdata.sirname%></h5>
                       </div>
                       <div class="info">
-                        <h5><i class="fas fa-map-marker-alt"></i> <%= result.district %></h5>
+                        <h5><i class="fas fa-map-marker-alt"></i> <%= postdata.district %></h5>
                       </div>
                       <div class="info">
-                        <a href="tel:<%= result.mobile %>">
-                          <h5><i class="fas fa-phone-alt"></i> <%= result.mobile %></h5></a>     
+                        <a href="tel:<%= postdata.mobile %>">
+                          <h5><i class="fas fa-phone-alt"></i> <%= postdata.mobile %></h5></a>     
                       </div>
                     </div>
                     <hr>
                     <p>
-                      <%- result.messege %>
+                      <%- postdata.messege %>
                     </p>
-                    <a href="/post/<%= result._id %>"><h5>See more</h5></a>
                     <hr>
                     <div class="msg-btn">
                         <h5>Share <i class="fas fa-share-alt"></i></h5>
-                        <h5>Call <a href="tel:<%= result.mobile %>"><i class="fas fa-phone-alt"></i></a></h5>
+                        <h5>Call <a href="tel:<%= postdata.mobile %>"><i class="fas fa-phone-alt"></i></a></h5>
 
                     </div>
                   </div>
@@ -117,19 +116,7 @@
               </div>
             </div>
           </div>
-        <%})%>
-      <%}else{%>
-        <center>
-          <img src="assets/nodata.png" alt="" class="nodata-pic">
-          <h1 class="empty-warning">No requests to view.</h1>
-          <a href="/request">
-            <button class="action-nodata">
-              <i class="fas fa-user-plus"></i>
-              Post a request
-            </button>
-          </a>  
-        </center>   
-      <%}%>
+
 
       
     </section>
