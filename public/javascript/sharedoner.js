@@ -5,7 +5,7 @@ document.querySelector('.doner-share-btn').addEventListener("click",handleShare)
         navigator.share({
           title: 'Check for doners on HelpTogether',
           text: 'HelpTogether might have a doner you are looking for',
-          url: window.location.href,        
+          url: 'https://helptogether.herokuapp.com/find',        
         }).then(() => {
           alert("Thanks for sharing");
         })
