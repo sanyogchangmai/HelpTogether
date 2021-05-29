@@ -12,8 +12,8 @@ app.use(express.static('public'));
 
 
 // ! Connecting to DB !
-const URL = process.env.DB_URL;
-mongoose.connect(URL,{ useNewUrlParser: true })
+const URI = process.env.DB_URL;
+mongoose.connect(URI,{ useNewUrlParser: true })
 .then((result) => console.log("Connected to DB"))
 .catch((err) => console.log(err))
 
